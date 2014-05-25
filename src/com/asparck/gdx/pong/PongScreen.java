@@ -1,5 +1,7 @@
 package com.asparck.gdx.pong;
 
+import java.util.Random;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
@@ -13,6 +15,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class PongScreen implements Screen {
+	private static final Random r = new Random();
+
 	public static class Paddle {
 		public static final Vector2 SIZE = new Vector2(20f, 60f);
 		public static final float SPEED = 5f;
@@ -27,13 +31,19 @@ public class PongScreen implements Screen {
 
 	public static class Ball {
 		public static final Vector2 SIZE = new Vector2(20f, 20f);
-		public static final Vector2 INITIAL_SPEED = new Vector2(5f, 2f);
+		private static final float START_SPEED = 6f;
 		public Vector2 pos = new Vector2();
 		public Vector2 speed = new Vector2();
 
 		public Rectangle toRectangle(Rectangle rectangle) {
 			rectangle.set(pos.x, pos.y, SIZE.x, SIZE.y);
 			return rectangle;
+		}
+
+		public static void calculateRandomStartingSpeed(Vector2 output) {
+			boolean toPlayer2 = r.nextInt(2) == 1;
+			double angle = (Math.PI / 4d) + r.nextDouble() * (Math.PI / 2) + (toPlayer2 ? Math.PI: 0d);
+			output.set(START_SPEED * (float) Math.sin(angle), START_SPEED * (float) Math.cos(angle));
 		}
 	}
 
@@ -137,7 +147,7 @@ public class PongScreen implements Screen {
 		player1.pos.set(0, HEIGHT / 2 - Paddle.SIZE.y / 2);
 		player2.pos.set(WIDTH - Paddle.SIZE.x, HEIGHT / 2 - Paddle.SIZE.y / 2);
 		ball.pos.set(WIDTH / 2 - Paddle.SIZE.x / 2, HEIGHT / 2 - Paddle.SIZE.y / 2);
-		ball.speed.set(Ball.INITIAL_SPEED);
+		Ball.calculateRandomStartingSpeed(ball.speed);
 	}
 
 	@Override
