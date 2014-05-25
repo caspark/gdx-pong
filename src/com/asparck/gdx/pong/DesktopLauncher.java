@@ -1,4 +1,4 @@
-package com.asparck.gdx.pong.desktop;
+package com.asparck.gdx.pong;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
