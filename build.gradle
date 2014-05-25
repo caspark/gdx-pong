@@ -34,11 +34,11 @@ dependencies {
 
 
 sourceCompatibility = 1.6
-sourceSets.main.java.srcDirs = [ "src/" ]
+sourceSets.main.java.srcDirs = [ "src/main/java" ]
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 project.ext.mainClassName = "com.asparck.gdx.pong.DesktopLauncher"
-project.ext.assetsDir = new File("./assets");
+project.ext.assetsDir = new File("src/main/resources");
 
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName
@@ -74,7 +74,7 @@ tasks.eclipse.doLast {
 task afterEclipseImport(description: "Post processing after project generation", group: "IDE") {
   doLast {
     def classpath = new XmlParser().parse(file(".classpath"))
-    new Node(classpath, "classpathentry", [ kind: 'src', path: 'assets' ]);
+    new Node(classpath, "classpathentry", [ kind: 'src', path: project.ext.assetsDir ]);
     def writer = new FileWriter(file(".classpath"))
     def printer = new XmlNodePrinter(new PrintWriter(writer))
     printer.setPreserveWhitespace(true)
