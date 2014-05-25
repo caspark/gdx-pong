@@ -5,6 +5,8 @@ This is the result of playing around with libGDX with the aim of making a Pong g
 
 Run with `gradle run`.
 
-Some things worth pointing out:
+"Features":
+
 - Using a single project gradle build, because this only targets the desktop.
+- Using libgdx's freetype extension to scale fonts properly
 
