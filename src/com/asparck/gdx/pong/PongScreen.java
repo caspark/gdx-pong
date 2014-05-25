@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -14,7 +14,7 @@ import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-public class PongScreen implements Screen {
+public class PongScreen extends ScreenAdapter {
 	private static final Random r = new Random();
 
 	public static class Paddle {
@@ -148,26 +148,6 @@ public class PongScreen implements Screen {
 		player2.pos.set(WIDTH - Paddle.SIZE.x, HEIGHT / 2 - Paddle.SIZE.y / 2);
 		ball.pos.set(WIDTH / 2 - Paddle.SIZE.x / 2, HEIGHT / 2 - Paddle.SIZE.y / 2);
 		Ball.calculateRandomStartingSpeed(ball.speed);
-	}
-
-	@Override
-	public void resize(int width, int height) {
-	}
-
-	@Override
-	public void show() {
-	}
-
-	@Override
-	public void hide() {
-	}
-
-	@Override
-	public void pause() {
-	}
-
-	@Override
-	public void resume() {
 	}
 
 	@Override
