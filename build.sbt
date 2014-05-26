@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.0"
 
-val gdxVersion = "1.0.1"
+val gdxVersion = "1.1.0"
 
 libraryDependencies ++= Seq(
 	"com.badlogicgames.gdx" % "gdx" % gdxVersion,
