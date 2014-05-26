@@ -23,3 +23,6 @@ EclipseKeys.executionEnvironment := Some(EclipseExecutionEnvironment.JavaSE16)
 EclipseKeys.relativizeLibs := false
 
 EclipseKeys.withSource := true
+
+// Assembly plugin configuration
+assemblySettings

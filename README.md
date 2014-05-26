@@ -5,7 +5,9 @@ This is the result of playing around with libGDX with the aim of making a Pong g
 
 Run with `gradle run`, or `sbt run`.
 
-"Features":
+Build a jar which includes all dependencies with `sbt assembly`.
+
+Somewhat notable things:
 
 - Using a single project gradle build, because this only targets the desktop.
 - Using a simple SBT build, because of [GRADLE-3023](http://issues.gradle.org/browse/GRADLE-3023).
