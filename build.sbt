@@ -1,3 +1,5 @@
+import AssemblyKeys._
+
 name := "gdx-pong"
 
 version := "1.0"
@@ -26,3 +28,8 @@ EclipseKeys.withSource := true
 
 // Assembly plugin configuration
 assemblySettings
+
+// make the resulting jar directly runnable
+assemblyOption in assembly ~= { _.copy(prependShellScript = Some(defaultShellScript)) }
+
+jarName in assembly := { s"${name.value}-${version.value}" }
