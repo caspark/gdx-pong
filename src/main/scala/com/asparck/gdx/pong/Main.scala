@@ -1,7 +1,6 @@
 package com.asparck.gdx.pong
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
+import com.badlogic.gdx.backends.lwjgl.{ LwjglApplication, LwjglApplicationConfiguration }
 
 object Main extends App {
   val config = new LwjglApplicationConfiguration();

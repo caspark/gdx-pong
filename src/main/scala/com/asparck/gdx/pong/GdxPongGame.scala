@@ -1,12 +1,10 @@
 package com.asparck.gdx.pong
 
-import com.badlogic.gdx.Game
-import com.badlogic.gdx.graphics.g2d.BitmapFont
-import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator
+import com.badlogic.gdx.{ Game, Gdx }
 import com.badlogic.gdx.graphics.Texture.TextureFilter
+import com.badlogic.gdx.graphics.g2d.BitmapFont
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter
 
 class GdxPongGame extends Game {
   def generateFont(fontSize: Int): BitmapFont = {
