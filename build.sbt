@@ -26,6 +26,9 @@ EclipseKeys.relativizeLibs := false
 
 EclipseKeys.withSource := true
 
+// Scalariform settings
+scalariformSettings
+
 // Assembly plugin configuration
 assemblySettings
 
